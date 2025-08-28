@@ -23,7 +23,7 @@ export default function Home() {
     </div>
 
     <div className="text-white container mx-auto py-16 ">
-      <h1 className="text-2xl font-bold text-center my-14">Your Fans can buy you a Chai !</h1> {/* my-10 as per harry */}
+      <h1 className="text-3xl font-bold text-center mb-14">Your Fans can buy you a Chai !</h1> {/* my-10 as per harry */}
       <div className="flex gap-5 justify-around">
         <div className="item space-y-3 flex flex-col items-center justify-center">
           <img src="/man.gif" className="bg-slate-200 rounded-full p-2 text-black" width={88} alt="" />
@@ -46,25 +46,9 @@ export default function Home() {
     <div className="bg-white h-1 opacity-10">
     </div>
 
-    <div className="text-white container mx-auto  ">
-      <h1 className="text-2xl font-bold text-center my-14">Learn More About Us</h1>
-      <div className="flex gap-5 justify-around">
-        <div className="item space-y-3 flex flex-col items-center justify-center">
-          <img src="/man.gif" className="bg-slate-200 rounded-full p-2 text-black" width={88} alt="" />
-          <p className="font-bold" >Fans want to help.</p>
-          <p className="" >Your Fans are available for you to help you </p> {/* As per harry w-1/2 text-center */}
-        </div>
-        <div className="item space-y-3 flex flex-col items-center justify-center">
-          <img src="/coin.gif" className="bg-slate-200 rounded-full p-2 text-black" width={88} alt="" />
-          <p className="font-bold" >Fans want to help.</p>
-          <p className="" >Your Fans are available for you to help you </p> {/* As per harry w-1/2 text-center */}
-        </div>
-        <div className="item space-y-3 flex flex-col items-center justify-center">
-          <img src="/group.gif" className="bg-slate-200 rounded-full p-2 text-black" width={88} alt="" />
-          <p className="font-bold" >Fans want to help.</p>
-          <p className="" >Your Fans are available for you to help you </p> {/* As per harry w-1/2 text-center */}
-        </div>
-      </div>  
+    <div className="text-white container mx-auto py-16 flex flex-col items-center justify-center">
+      <h1 className="text-3xl font-bold text-center mb-14">Learn More About Us</h1>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/De77dp-tjUg?si=nvlWS9oHz57nyXNE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   </>
   );
