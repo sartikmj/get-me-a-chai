@@ -94,7 +94,8 @@ const Login = () => {
 
 
                 <button
-                    className="flex items-center bg-slate-900 border border-gray-300 w-80 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-white hover:bg-gray-200 hover:text-black active:scale-95 active:shadow-inner transition duration-150 ease-in-out hover:text-black">
+                    onClick={() => signIn("github")} // signin using github
+                    className="flex items-center bg-slate-900 border border-gray-300 w-80 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium text-white hover:bg-gray-200 k active:scale-95 active:shadow-inner transition duration-150 ease-in-out hover:text-black">
                     <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                         viewBox="0 0 73 73" version="1.1">
                         <g id="team-collaboration/version-control/github" stroke="none" strokeWidth="1" fill="none"

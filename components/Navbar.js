@@ -8,8 +8,11 @@ const Navbar = () => {
 
   if(session){
     return <>
+    <div className='bg-black text-white flex justify-between items-center px-4 h-16'>
+
       Signed in as {session.user.email} <br/>
       <button onClick={() => signOut()}>Sign out</button>
+    </div>
     </>
   }
 
