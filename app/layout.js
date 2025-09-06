@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           <div className="min-h-[84.1vh]">
             {/* giving background color */}
-            <div className="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+            <div className="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] text-white"></div>
             {children}
           </div>
           <Footer />
