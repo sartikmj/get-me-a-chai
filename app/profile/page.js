@@ -1,20 +1,22 @@
 "use client"
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useSession, signIn, signOut } from 'next-auth/react'
 
 const Profile = () => {
 
-    const { data : session } = useSession()
+    const { data: session } = useSession()
+    const router = useRouter()
 
-    if(!session){
-        const router = useRouter();
-        router.push('/login')
-    }
+    useEffect(() => {
+        if (session) {
+            router.push('/profile')
+        }
+    }, [session, router])
 
-  return (
-    <div>Profile Page</div>
-  )
+    return (
+        <div>Profile Page</div>
+    )
 }
 
-export default page
+export default Profile;
