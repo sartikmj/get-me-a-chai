@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Home() {
   return (<>
     <div className="flex justify-center items-center flex-col gap-4 text-white h-[44vh] " >
-      <div className="font-bold flex gap-4 justify-center items-center text-4xl">Buy me a Chai <span><img src="/tea.gif" width={88} alt="" /></span> </div>
+      <div className="font-bold flex gap-4 justify-center items-center text-4xl">Buy me a Chai <span><img className="invertImg" src="/tea.gif" width={88} alt="" /></span> </div>
       <p>
         A crowdfunding platform for creators. Get funded by your fans and followers. Start now !
       </p>

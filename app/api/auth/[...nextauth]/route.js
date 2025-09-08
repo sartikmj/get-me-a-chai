@@ -7,7 +7,7 @@ import GitHubProvider from "next-auth/providers/github";
 import FacebookProvider from "next-auth/providers/facebook";
 import EmailProvider from "next-auth/providers/email";
 
-export const authoptions =  NextAuth({
+export const authoptions = NextAuth({
     providers: [
         // OAuth authentication providers...
         // AppleProvider({
@@ -30,7 +30,14 @@ export const authoptions =  NextAuth({
             clientId: process.env.GITHUB_ID,
             clientSecret: process.env.GITHUB_SECRET,
         }),
-    ]
+    ],
+    callbacks: {
+        async signIn({ user, account, profile, email, credentials }) {
+            if(account.provider === "github"){
+                //Connect to the database
+            }    
+        }
+    }
 })
 
 export { authoptions as GET, authoptions as POST };

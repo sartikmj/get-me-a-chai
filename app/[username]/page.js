@@ -15,7 +15,7 @@ const Username = async ({ params }) => {
             <div className='bg-white min-h-screen'>
                 <div className='info flex justify-center items-center flex-col gap-2 my-15 text-slate-500'>
                     <div className='font-bold text-lg'>
-                        @{params.username}
+                        @{decodeURIComponent(params.username)}
                     </div>
                     <div>
                         Creating Animated arts for VTT's
@@ -51,7 +51,7 @@ const Username = async ({ params }) => {
                             </ul>
                         </div>
                         <div className="makePayment w-1/2 bg-gray-900 rounded-lg text-white p-5">
-                            <h2 className='text-2xl font-bold my-5'>Support {params.username}</h2>
+                            <h2 className='text-2xl font-bold my-5'>Support {decodeURIComponent(params.username)}</h2>
                             <div className='flex flex-col gap-2'>
                                 <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter Amount' />
                                 {/* Input for name and message */}

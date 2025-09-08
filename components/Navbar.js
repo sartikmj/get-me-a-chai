@@ -22,7 +22,7 @@ const Navbar = () => {
     <nav className='bg-black text-white flex justify-between items-center px-4 h-16'>
 
       <Link href={"/"} className="logo font-bold flex justify-center items-center" >
-        <img src="tea.gif" width={44} alt="" />
+        <img className='invertImg' src="tea.gif" width={44} alt="" />
         <span>GET ME A CHAI !</span>
       </Link>
 
