@@ -6,14 +6,7 @@ import Profile from '../../components/Profile'
 
 const ProfilePage = () => {
 
-    const { data: session } = useSession()
-    const router = useRouter()
 
-    useEffect(() => {
-        if (session) {
-            router.push('/profile')
-        }
-    }, [session, router])
 
     return (
         <div><Profile /></div>
