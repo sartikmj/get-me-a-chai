@@ -15,7 +15,7 @@ import { notFound } from "next/navigation"
 
 const PaymentPage = ({ username }) => {
 
-    const [paymentform, setPaymentform] = useState({name: "", message: "", amount: ""})
+    const [paymentform, setPaymentform] = useState({ name: "", message: "", amount: "" })
     const [currentUser, setCurrentUser] = useState({})
     const [payments, setPayments] = useState([])
     const searchParams = useSearchParams()
@@ -24,6 +24,23 @@ const PaymentPage = ({ username }) => {
     useEffect(() => {
         getData()
     }, [])
+
+    useEffect(()=>{
+        if(searchParams.get('paymentdone')==='true'){
+            toast.success('Thanks for your donation !', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+            })
+        }
+        router.push(`/${username}`, { scroll: false });
+    },[])
 
     const handleChange = (e) => {
         setPaymentform({ ...paymentform, [e.target.name]: e.target.value })
@@ -41,14 +58,13 @@ const PaymentPage = ({ username }) => {
         let a = await initiate(amount, username, paymentform)
         let orderId = a.order.id
 
-         if (!orderId) {
-        toast.error('Failed to create order. Please try again.');
-        return;
-    }
+        if (!orderId) {
+            toast.error('Failed to create order. Please try again.');
+            return;
+        }
 
         var options = {
-            // "key": currentUser.razorpayid, // Enter the Key ID generated from the Dashboard
-            "key": process.env.NEXT_PUBLIC_KEY_ID, 
+            "key": currentUser.razorpayid, // Enter the Key ID generated from the Dashboard 
             "amount": amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
             "name": "Ducat", //your business name
@@ -86,7 +102,7 @@ const PaymentPage = ({ username }) => {
                 pauseOnHover
                 theme="light" />
             {/* Same as */}
-            <ToastContainer />
+            {/* <ToastContainer /> */}
             <Script src="https://checkout.razorpay.com/v1/checkout.js"></Script>
 
 
@@ -141,14 +157,31 @@ const PaymentPage = ({ username }) => {
                             <input onChange={handleChange} value={paymentform.amount} name="amount" type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter Amount' />
 
 
-                            <button onClick={() => pay(Number.parseInt(paymentform.amount))} type="button" className="text-white bg-gradient-to-br from-purple-900 to-blue-900 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 disabled:bg-slate-600 disabled:from-purple-100" disabled={paymentform.name?.length < 3 || paymentform.message?.length < 4 || paymentform.amount?.length < 1}>Pay</button>
-
+                            <button
+                                onClick={() => {
+                                    if (
+                                        paymentform.name?.length < 3 ||
+                                        paymentform.message?.length < 4 ||
+                                        paymentform.amount?.length < 1
+                                    ) return; // do nothing if invalid
+                                    pay(Number.parseInt(paymentform.amount));
+                                }}
+                                type="button"
+                                className="text-white bg-gradient-to-br from-red-500 to-violet-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 disabled:bg-slate-600 disabled:from-purple-100"
+                                disabled={
+                                    paymentform.name?.length < 3 ||
+                                    paymentform.message?.length < 4 ||
+                                    paymentform.amount?.length < 1
+                                }
+                            >
+                                Pay
+                            </button>
                         </div>
                         {/* Or choose from these amounts  */}
                         <div className='flex flex-col md:flex-row gap-2 mt-5'>
-                            <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(1000)}>Pay ₹10</button>
-                            <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(2000)}>Pay ₹20</button>
-                            <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(3000)}>Pay ₹30</button>
+                            <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(10)}>Pay ₹10</button>
+                            <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(20)}>Pay ₹20</button>
+                            <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(30)}>Pay ₹30</button>
                         </div>
                     </div>
                 </div>
