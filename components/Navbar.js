@@ -19,11 +19,11 @@ const Navbar = () => {
   // }
 
   return (
-    <nav className='bg-black text-white flex justify-between items-center px-4 h-16'>
+    <nav className='bg-black text-white flex justify-between items-center px-4 md:h-16 flex-col md:flex-row'>
 
       <Link href={"/"} className="logo font-bold flex justify-center items-center" >
         <img className='invertImg' src="tea.gif" width={44} alt="" />
-        <span>GET ME A CHAI !</span>
+        <span className='text-xl md:text-base my-3 md:my-0' >GET ME A CHAI !</span>
       </Link>
 
       <ul className='flex justify-between gap-4'>
@@ -33,7 +33,7 @@ const Navbar = () => {
             <li>Sign Up</li>
             <li>Log In</li> */}
 
-        <div className='reltive'>
+        <div className='relative flex flex-col md:block gap-4'>
           {session &&
             <>
               <button onClick={() => setShowDropdown(!showDropdown)} onBlur={() => setTimeout(() => setShowDropdown(false), 300)} id="dropdownDefaultButton" data-dropdown-toggle="dropdown" className="mx-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">

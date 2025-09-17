@@ -22,8 +22,9 @@ const PaymentPage = ({ username }) => {
     const router = useRouter()
 
     useEffect(() => {
+        console.log("useeffect called");
         getData()
-    }, [])
+    }, [setCurrentUser,username])
 
     useEffect(()=>{
         if(searchParams.get('paymentdone')==='true'){
@@ -45,8 +46,9 @@ const PaymentPage = ({ username }) => {
     const handleChange = (e) => {
         setPaymentform({ ...paymentform, [e.target.name]: e.target.value })
     }
-
     const getData = async (params) => {
+        console.log("funtion called");
+        
         let u = await fetchuser(username)
         setCurrentUser(u);
         let dbPayments = fetchpayments(username) // fetchpayments returns a promise
@@ -88,6 +90,7 @@ const PaymentPage = ({ username }) => {
         rzp1.open();
     }
 
+    // If the username is not present in the database, show 404 page
     return (
         <>
             <ToastContainer
@@ -126,7 +129,7 @@ const PaymentPage = ({ username }) => {
                 </div>
 
                 <div className="payment flex gap-3 w-[80%] mt-11 flex-col md:flex-row">
-                    <div className="supporters w-full md:w-1/2 bg-slate-900 rounded-lg text-white px-2 md:p-10">
+                    <div className="supporters w-full md:w-1/2 bg-slate-900 rounded-lg text-white px-2 md:p-10 overflow-x-scroll scrollbar-hide">
                         {/* Show list of all the supporters as a leaderboard  */}
                         <h2 className='text-2xl font-bold my-5'> Top 10 Supporters</h2>
                         <ul className='mx-5 text-lg'>
@@ -178,7 +181,7 @@ const PaymentPage = ({ username }) => {
                             </button>
                         </div>
                         {/* Or choose from these amounts  */}
-                        <div className='flex flex-col md:flex-row gap-2 mt-5'>
+                        <div className='flex flex-col md:flex-row gap-2 mt-5 pb-5'>
                             <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(10)}>Pay ₹10</button>
                             <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(20)}>Pay ₹20</button>
                             <button className='bg-slate-800 p-3 rounded-lg' onClick={() => pay(30)}>Pay ₹30</button>
