@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Home() {
   return (<>
     <div className="flex justify-center items-center flex-col gap-4 text-white h-[44vh] px-5 md:px-0 text-xs md:text-base" >
-      <div className="font-bold text-center flex gap-4 justify-center items-center md:text-4xl text-xl">Buy me a Chai <span><img className="invertImg" src="/tea.gif" width={88} alt="" /></span> </div>
+      <div className="font-bold text-center flex gap-4 justify-center items-center md:text-4xl text-xl">Get me a Ducat<span><img className="invertImg" src="/tea.gif" width={88} alt="" /></span> </div>
       <p className="text-center md:text-left">
         A crowdfunding platform for creators. Get funded by your fans and followers. Start now !
       </p>
@@ -28,7 +28,7 @@ export default function Home() {
     </div>
 
     <div className="text-white container mx-auto py-16 px-10 ">
-      <h2 className="text-3xl font-bold text-center mb-14">Your Fans can buy you a Chai !</h2> {/* my-10 as per harry */}
+      <h2 className="text-3xl font-bold text-center mb-14">Your Fans can buy you a Ducat !</h2> {/* my-10 as per harry */}
       <div className="flex gap-5 justify-around">
         <div className="item space-y-3 flex flex-col items-center justify-center">
           <img src="/man.gif" className="bg-slate-200 rounded-full p-2 text-black" width={88} alt="" />
