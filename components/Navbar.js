@@ -23,7 +23,7 @@ const Navbar = () => {
 
       <Link href={"/"} className="logo font-bold flex justify-center items-center" >
         <img className='invertImg' src="tea.gif" width={44} alt="" />
-        <span className='text-xl md:text-base my-3 md:my-0' >GET ME A CHAI !</span>
+        <span className='text-xl md:text-base my-3 md:my-0' >GET ME A DUCAT !</span>
       </Link>
 
       <ul className='flex justify-between gap-4'>

@@ -121,7 +121,7 @@ const PaymentPage = ({ username }) => {
                     @{username}
                 </div>
                 <div className='text-slate-400'>
-                    Lets help {username} get a chai!
+                    Lets help {username} get a ducat!
 
                 </div>
                 <div className='text-slate-400'>

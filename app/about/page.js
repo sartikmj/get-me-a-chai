@@ -5,7 +5,7 @@ const About = () => {
         <div className="bg-purple-900 rounded-4xl container mx-auto px-8 md:px-4 py-8 ">
             <h1 className="text-3xl font-semibold mb-4">About Get Me a Ducat</h1>
             <p className="text-lg mb-6">
-                Get Me a Chai is a crowdfunding platform designed for creators to fund their projects with the support of their fans. It&apos;s a space where your fans can directly contribute to your creative endeavors by buying you a chai. Unlock the potential of your fanbase and bring your projects to life.
+                Get Me a Ducat is a crowdfunding platform designed for creators to fund their projects with the support of their fans. It&apos;s a space where your fans can directly contribute to your creative endeavors by buying you a ducat. Unlock the potential of your fanbase and bring your projects to life.
             </p>
 
             <h2 className="text-2xl font-semibold mb-4">How It Works</h2>
@@ -18,10 +18,10 @@ const About = () => {
                     </div>
                 </div>
                 <div className="flex items-center mb-6">
-                    <img className="w-20 h-20 rounded-full mr-4" src="/coin.gif" alt="Support Through Chai" />
+                    <img className="w-20 h-20 rounded-full mr-4" src="/coin.gif" alt="Support Through Ducat" />
                     <div>
-                        <h3 className="text-xl font-semibold mb-2">Support Through Chai</h3>
-                        <p>Receive support from your fans in the form of chai purchases, directly contributing to your project funding.</p>
+                        <h3 className="text-xl font-semibold mb-2">Support Through Ducat</h3>
+                        <p>Receive support from your fans in the form of ducat purchases, directly contributing to your project funding.</p>
                     </div>
                 </div>
                 {/* Add more steps as needed */}
@@ -91,6 +91,6 @@ const About = () => {
 export default About;
 
 export const metadata = {
-    title: "About - Get Me A Chai",
+    title: "About - Get Me A Ducat",
   }
    
